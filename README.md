@@ -1,27 +1,36 @@
-# Next.js + Tailwind CSS Example
+# Drum Machine
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+A simple drum machine application built with React.
 
-## Deploy your own
+## Features
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+- A grid of 9 buttons, each representing a different drum sound
+- Each button plays its respective drum sound when clicked
+- A display shows the name of the last drum sound played
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+## Prerequisites
 
-## How to use
+- Node.js
+- npm
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+## Installation
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-```
+1. Clone the repository
+2. Change into the project directory
+3. Install the dependencies
 
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+## Usage
 
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
+1. Start the development server `npm run dev`
+2. Visit `http://localhost:3000` in your web browser to use the drum machine.
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+## Technical details
+
+The application uses the following technologies:
+
+- Next.js
+- TypeScript
+
+## Acknowledgments
+
+This application was built as a project for [FreeCodeCamp](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-drum-machine).
