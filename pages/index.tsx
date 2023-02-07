@@ -16,15 +16,21 @@ const Home: NextPage = () => {
       <div id="drum-machine">
         <div id="display"></div>
         <div
-          className="drum-pad w-24 h-24 flex justify-center items-center bg-red-400"
+          className="drum-pad text-3xl font-bold w-24 h-24 flex justify-center items-center rounded-md shadow-xl opacity-80 hover:opacity-100 bg-red-400"
           id="Heater 1"
         >
           Q
         </div>
-        <div className="drum-pad" id="Heater 2">
+        <div
+          className="drum-pad text-3xl font-bold w-24 h-24 flex justify-center items-center rounded-md shadow-xl opacity-80 hover:opacity-100 bg-red-400"
+          id="Heater 2"
+        >
           W
         </div>
-        <div className="drum-pad" id="Heater 3">
+        <div
+          className="drum-pad text-3xl font-bold w-24 h-24 flex justify-center items-center rounded-md shadow-xl opacity-80 hover:opacity-100 bg-red-400"
+          id="Heater 3"
+        >
           E
         </div>
         <div className="drum-pad" id="Heater 4">
