@@ -10,15 +10,15 @@ const Drum = () => {
     <>
       <title>Drum Machine</title>
       <link rel="icon" href="/favicon.ico" />
-      <div className="text-center pt-6">
-        <h1 className=" text-6xl">Drum Machine</h1>
-        <h3 className=" text-2xl py-3">Built with love</h3>
-      </div>
-      <div className="flex h-3/5">
+
+      <div className="flex justify-center items-center h-screen">
         <div
           id="drum-machine"
-          className="grid bg-lime-700 w-4/5 lg:w-2/5 justify-items-center gap-5 m-auto rounded-lg border-black border-2 p-12 "
+          className="grid bg-lime-700 w-4/5 lg:w-2/5 justify-items-center gap-5 m-auto rounded-lg border-black border-2 p-10 "
         >
+          <div className="text-center">
+            <h1 className=" text-6xl">Drum Machine</h1>
+          </div>
           <div id="buttons" className="">
             <div className="flex gap-2 pb-2">
               <button
@@ -94,6 +94,7 @@ const Drum = () => {
             <div className="bg-amber-400 p-3 text-3xl text-center w-60">
               {active}
             </div>
+            <h1 className="pt-5">Copyright (c) 2023 Samuel Pokam</h1>
           </div>
         </div>
       </div>
