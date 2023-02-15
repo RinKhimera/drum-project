@@ -1,11 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
+import Button from "./Button";
 
 const Drum = () => {
-  const [active, setActive] = useState("");
-  const playAudio = (audioId: string, audioPath: string | undefined) => {
-    setActive(audioId);
-    new Audio(audioPath).play();
-  };
+  const buttons = [
+    { id: "Heater-1", audioPath: "/Heater-1.mp3", keyTrigger: "Q" },
+    { id: "Heater-2", audioPath: "/Heater-2.mp3", keyTrigger: "W" },
+    { id: "Heater-3", audioPath: "/Heater-3.mp3", keyTrigger: "E" },
+    { id: "Heater-4", audioPath: "/Heater-4.mp3", keyTrigger: "A" },
+    { id: "Clap", audioPath: "/Clap.mp3", keyTrigger: "S" },
+    { id: "Open-HH", audioPath: "/Open-HH.mp3", keyTrigger: "D" },
+    { id: "Kick-n'-Hat", audioPath: "/Kick-n-Hat.mp3", keyTrigger: "Z" },
+    { id: "Kick", audioPath: "/Kick.mp3", keyTrigger: "X" },
+    { id: "Closed-HH", audioPath: "/Closed-HH.mp3", keyTrigger: "C" },
+  ];
+
   return (
     <>
       <title>Drum Machine</title>
@@ -21,79 +29,13 @@ const Drum = () => {
           </div>
           <div id="buttons" className="">
             <div className="flex gap-2 pb-2">
-              <button
-                id="Heater 1"
-                className="drum-pad text-3xl font-bold w-24 h-24 flex justify-center items-center rounded-md shadow-xl opacity-80 hover:opacity-100 bg-red-400"
-                onClick={() => playAudio("Heater-1", "/Heater-1.mp3")}
-              >
-                Q
-              </button>
-              <button
-                id="Heater 2"
-                className="drum-pad text-3xl font-bold w-24 h-24 flex justify-center items-center rounded-md shadow-xl opacity-80 hover:opacity-100 bg-red-400"
-                onClick={() => playAudio("Heater-2", "/Heater-2.mp3")}
-              >
-                W
-              </button>
-              <button
-                id="Heater 3"
-                className="drum-pad text-3xl font-bold w-24 h-24 flex justify-center items-center rounded-md shadow-xl opacity-80 hover:opacity-100 bg-red-400"
-                onClick={() => playAudio("Heater-3", "/Heater-3.mp3")}
-              >
-                E
-              </button>
-            </div>
-            <div className="flex gap-2 pb-2">
-              <button
-                id="Heater 4"
-                className="drum-pad text-3xl font-bold w-24 h-24 flex justify-center items-center rounded-md shadow-xl opacity-80 hover:opacity-100 bg-red-400"
-                onClick={() => playAudio("Heater-4", "/Heater-4.mp3")}
-              >
-                A
-              </button>
-              <button
-                id="Clap"
-                className="drum-pad text-3xl font-bold w-24 h-24 flex justify-center items-center rounded-md shadow-xl opacity-80 hover:opacity-100 bg-red-400"
-                onClick={() => playAudio("Clap", "/Clap.mp3")}
-              >
-                S
-              </button>
-              <button
-                id="Open-HH"
-                className="drum-pad text-3xl font-bold w-24 h-24 flex justify-center items-center rounded-md shadow-xl opacity-80 hover:opacity-100 bg-red-400"
-                onClick={() => playAudio("Open-HH", "/Open-HH.mp3")}
-              >
-                D
-              </button>
-            </div>
-            <div className="flex gap-2 pb-2">
-              <button
-                id="Kick-n'-Hat"
-                className="drum-pad text-3xl font-bold w-24 h-24 flex justify-center items-center rounded-md shadow-xl opacity-80 hover:opacity-100 bg-red-400"
-                onClick={() => playAudio("Kick-n'-Hat", "/Kick-n-Hat.mp3")}
-              >
-                Z
-              </button>
-              <button
-                id="Kick"
-                className="drum-pad text-3xl font-bold w-24 h-24 flex justify-center items-center rounded-md shadow-xl opacity-80 hover:opacity-100 bg-red-400"
-                onClick={() => playAudio("Kick", "/Kick.mp3")}
-              >
-                X
-              </button>
-              <button
-                id="Closed-HH"
-                className="drum-pad text-3xl font-bold w-24 h-24 flex justify-center items-center rounded-md shadow-xl opacity-80 hover:opacity-100 bg-red-400"
-                onClick={() => playAudio("Closed-HH", "/Closed-HH.mp3")}
-              >
-                C
-              </button>
+              {buttons.map(({ id, audioPath, keyTrigger }) => (
+                <Button id={id} audioPath={audioPath} keyTrigger={keyTrigger} />
+              ))}
             </div>
           </div>
           <div id="display">
-            <div className="bg-amber-400 p-3 text-3xl text-center w-60">
-              {active}
-            </div>
+            <div className="bg-amber-400 p-3 text-3xl text-center w-60"></div>
             <h1 className="pt-5">Copyright (c) 2023 Samuel Pokam</h1>
           </div>
         </div>
