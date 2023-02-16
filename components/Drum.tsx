@@ -50,8 +50,14 @@ const Drum = () => {
   ];
 
   const [currentAudioName, setCurrentAudioName] = useState("");
+  const [isPlaying, setIsPlaying] = useState(false);
 
-  const handleButtonClick = (name) => {
+  const handleButtonClick = (name: string) => {
+    setCurrentAudioName(name);
+  };
+
+  const handleAudioPlay = (name: string) => {
+    setIsPlaying(true);
     setCurrentAudioName(name);
   };
 
@@ -63,7 +69,7 @@ const Drum = () => {
       <div className="flex justify-center items-center h-screen">
         <div
           id="drum-machine"
-          className="grid w-9/12 lg:w-2/3 2xl:w-1/2 bg-lime-700 justify-items-center gap-5 rounded-lg border-black border-2 p-5"
+          className="grid w-9/12 lg:w-2/3 2xl:w-1/2 bg-gradient-to-r from-cyan-500 to-blue-500 justify-items-center gap-5 rounded-lg border-black border-2 p-5"
         >
           <div className="text-center">
             <h1 className=" text-6xl">Drum Machine</h1>
@@ -75,16 +81,17 @@ const Drum = () => {
                   id={id}
                   audioPath={audioPath}
                   keyTrigger={keyTrigger}
-                  onClick={() => handleButtonClick(name)}
+                  name={name}
+                  onClick={() => {
+                    handleButtonClick(name);
+                    handleAudioPlay(name);
+                  }}
                 />
               ))}
             </div>
           </div>
-          <div id="display">
-            <div className="bg-amber-400 p-3 text-3xl text-center w-60">
-              {currentAudioName}
-            </div>
-            <h1 className="pt-5">Copyright (c) 2023 Samuel Pokam</h1>
+          <div className="justify-self-end text-xl">
+            Copyright (c) 2023 Samuel Pokam
           </div>
         </div>
       </div>
