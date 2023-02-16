@@ -27,7 +27,12 @@ const Drum = () => {
       keyTrigger: "A",
       name: "Heater 4",
     },
-    { id: "Clap", audioPath: "/Clap.mp3", keyTrigger: "S", name: "Clap" },
+    {
+      id: "Clap",
+      audioPath: "https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3",
+      keyTrigger: "S",
+      name: "Clap",
+    },
     {
       id: "Open-HH",
       audioPath: "https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3",
