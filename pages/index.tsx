@@ -5,7 +5,7 @@ import Drum from "../components/Drum";
 
 const Home: NextPage = () => {
   return (
-    <div className=" bg-slate-300 h-screen ">
+    <div className=" bg-hero h-screen ">
       <Head>
         <title>Drum Machine</title>
         <meta

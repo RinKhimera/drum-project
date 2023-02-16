@@ -90,7 +90,7 @@ const Drum = () => {
               ))}
             </div>
           </div>
-          <div className="justify-self-end text-xl">
+          <div className="justify-self-end text-lg">
             Copyright (c) 2023 Samuel Pokam
           </div>
         </div>

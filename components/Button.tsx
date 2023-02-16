@@ -17,10 +17,10 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [audioName, setAudioName] = useState("");
-  const audioRef = useRef(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    const handleKeyDown = (event) => {
+    const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key.toUpperCase() === keyTrigger) {
         playSound();
       }
@@ -35,13 +35,17 @@ const Button: React.FC<ButtonProps> = ({
 
   const playSound = () => {
     setAudioName(name);
-    audioRef.current.currentTime = 0;
-    audioRef.current.play();
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.play();
+    }
     setIsPlaying(true);
-    setTimeout(() => {
-      setIsPlaying(false);
-      setAudioName("");
-    }, audioRef.current.duration * 1000);
+    if (audioRef.current && typeof audioRef.current.duration === "number") {
+      setTimeout(() => {
+        setIsPlaying(false);
+        setAudioName("");
+      }, audioRef.current.duration * 1000);
+    }
   };
 
   const buttonClass = isPlaying ? "bg-red-500" : "bg-green-500";
@@ -56,7 +60,7 @@ const Button: React.FC<ButtonProps> = ({
       {keyTrigger}
       <audio id={keyTrigger} src={audioPath} ref={audioRef}></audio>
       {audioName && (
-        <div className="bg-amber-400 p-3 text-2xl text-red-600 text-center w-40 absolute top-0">
+        <div className="bg-amber-400 p-3 text-2xl font-bold text-red-600 text-center w-40 absolute top-0">
           {audioName}
         </div>
       )}
